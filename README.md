@@ -1,4 +1,4 @@
-# 🏙️ İstanbul Ev Fiyat Tahmini (AI-Powered)
+# 🏙️ İstanbul Ev Fiyat Tahmini 
 
 ![Uygulama Ekran Görüntüsü](dashboard.png)
 
