@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İstanbul Ev Fiyat Tahmini</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-container"></div>
+    <div class="glass-panel">
+        <h1>İstanbul Ev Fiyat Tahmini</h1>
+        <form id="prediction-form">
+            <div class="input-group">
+                <label for="district">İlçe</label>
+                <input type="text" id="district" name="district" placeholder="Örn: Kadıköy" required>
+            </div>
+            <div class="input-group">
+                <label for="neighborhood">Mahalle</label>
+                <input type="text" id="neighborhood" name="neighborhood" placeholder="Örn: Moda" required>
+            </div>
+            <div class="input-group">
+                <label for="net_sqm">Net Metrekare</label>
+                <input type="number" id="net_sqm" name="net_sqm" placeholder="Örn: 120" required>
+            </div>
+            <div class="input-group">
+                <label for="rooms">Oda Sayısı</label>
+                <input type="text" id="rooms" name="rooms" placeholder="Örn: 3+1" required>
+            </div>
+            <button type="submit" class="glow-button">Fiyatı Hesapla</button>
+        </form>
+        <div class="result-container" id="result-container">
+            <div class="price-label">Tahmini Değer</div>
+            <div class="price-value" id="price-value">₺0</div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

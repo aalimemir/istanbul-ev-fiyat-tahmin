@@ -1,0 +1,197 @@
+:root {
+    --neon-green: #2ecc71;
+    --glass-bg: rgba(15, 23, 42, 0.45);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --text-main: #ffffff;
+    --text-muted: #e2e8f0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    min-height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0f172a;
+    overflow-y: auto; 
+    position: relative;
+    padding: 40px 0;
+}
+
+.background-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('bg.png');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.35);
+    z-index: 0;
+}
+
+.glass-panel {
+    position: relative;
+    z-index: 1;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 3rem;
+    width: 90%;
+    max-width: 550px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.05);
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+h1 {
+    color: var(--text-main);
+    font-size: 2.2rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    letter-spacing: -0.5px;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.6);
+    line-height: 1.2;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+label {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+input {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    color: var(--text-main);
+    font-size: 1.05rem;
+    transition: all 0.3s ease;
+    outline: none;
+    backdrop-filter: blur(5px);
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+input:focus {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: var(--neon-green);
+    box-shadow: 0 0 20px rgba(46, 204, 113, 0.25);
+    transform: translateY(-2px);
+}
+
+.glow-button {
+    width: 100%;
+    padding: 1.25rem;
+    margin-top: 1rem;
+    background: transparent;
+    color: var(--neon-green);
+    border: 2px solid var(--neon-green);
+    border-radius: 12px;
+    font-size: 1.15rem;
+    font-weight: 800;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-shadow: 0 0 5px rgba(46, 204, 113, 0.5);
+}
+
+.glow-button:hover {
+    background: var(--neon-green);
+    color: #0f172a;
+    box-shadow: 0 0 35px rgba(46, 204, 113, 0.5);
+    transform: translateY(-3px);
+    text-shadow: none;
+}
+
+.glow-button:active {
+    transform: translateY(0);
+}
+
+.result-container {
+    margin-top: 2.5rem;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    height: 0;
+    overflow: hidden;
+}
+
+.result-container.show {
+    opacity: 1;
+    transform: translateY(0);
+    height: auto;
+    padding-top: 1rem;
+}
+
+.price-label {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.price-value {
+    color: var(--neon-green);
+    font-size: 3.5rem;
+    font-weight: 800;
+    text-shadow: 0 0 25px rgba(46, 204, 113, 0.5);
+    letter-spacing: -1px;
+}
+
+/* Loading animation for button */
+.glow-button.loading {
+    color: transparent;
+    pointer-events: none;
+}
+
+.glow-button.loading::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 24px;
+    height: 24px;
+    margin: -12px 0 0 -12px;
+    border: 3px solid rgba(46, 204, 113, 0.3);
+    border-top-color: var(--neon-green);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
