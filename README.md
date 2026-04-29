@@ -36,12 +36,9 @@ Projeyi yerel bilgisayarınızda çalıştırmak için şu adımları izleyin:
 
 **1. Repoyu Klonlayın:**
 
-&#x20;  ```bash
-
-&#x20;  git clone \[https://github.com/KULLANICI\_ADIN/istanbul-ev-fiyat-tahmin.git](https://github.com/KULLANICI\_ADIN/istanbul-ev-fiyat-tahmin.git)
-
-&#x20;  cd istanbul-ev-fiyat-tahmin
-
+&#x20; ```bash
+   git clone [https://github.com/aalimemir/istanbul-ev-fiyat-tahmin.git](https://github.com/aalimemir/istanbul-ev-fiyat-tahmin.git)
+   cd istanbul-ev-fiyat-tahmin
 
 
 **2.Gerekli Kütüphaneleri Kurun:**
